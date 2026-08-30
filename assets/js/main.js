@@ -81,39 +81,54 @@
         });
     }
 
-    /* ── Animated stats ─────────────────────────────── */
-    const fmt = n => n >= 1000 ? Math.round(n).toLocaleString('en-US') : String(n);
-    function countUp(el, target, suffix = '') {
-        const dur = 1500, start = performance.now(), from = 0;
-        const dec = !Number.isInteger(target);
-        (function tick(now) {
-            const p = Math.min((now - start) / dur, 1);
-            const eased = 1 - Math.pow(1 - p, 3);
-            const v = from + (target - from) * eased;
-            el.textContent = (dec ? v.toFixed(2) : fmt(v)) + suffix;
-            if (p < 1) requestAnimationFrame(tick);
-        })(start);
-    }
+    /* ---------- Animated stats ---------- */
+(function () {
+  const wrap = document.getElementById('stats');
+  if (!wrap) return;
 
-    async function loadStats() {
-        let data = C.stats || {};
-        if (C.statsEndpoint) {
-            try {
-                const r = await fetch(C.statsEndpoint, { cache: 'no-store' });
-                if (r.ok) data = { ...data, ...(await r.json()) };
-            } catch { /* keep fallback numbers */ }
-        }
-        const host = $('#stats'); if (!host) return;
-        const fire = () => $$('strong[data-key]', host).forEach(el => {
-            const v = Number(data[el.dataset.key] ?? 0);
-            countUp(el, v, el.dataset.suffix || '');
-        });
-        if ('IntersectionObserver' in window) {
-            const io = new IntersectionObserver(e => { if (e[0].isIntersecting) { fire(); io.disconnect(); } }, { threshold: .3 });
-            io.observe(host);
-        } else fire();
+  const cfg  = window.ROYAL || {};
+  const nums = [...wrap.querySelectorAll('strong[data-key]')];
+
+  // how each number should look on screen
+  function fmt(value, key) {
+    if (key === 'uptime') return value.toFixed(2) + '%';
+    if (key === 'users' && value >= 1000) {
+      const k = value / 1000;
+      return (k >= 100 ? Math.round(k) : k.toFixed(1).replace(/\.0$/, '')) + 'K';
     }
-    loadStats();
+    return Math.round(value).toLocaleString('en-US');
+  }
+
+  function run(el, target) {
+    const key = el.dataset.key, dur = 1400, t0 = performance.now();
+    const ease = t => 1 - Math.pow(1 - t, 3);
+    requestAnimationFrame(function step(now) {
+      const p = Math.min((now - t0) / dur, 1);
+      el.textContent = fmt(target * ease(p), key);
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = fmt(target, key);   // always land on the exact value
+    });
+  }
+
+  const fallback = Object.assign(
+    { servers: 0, users: 0, commands: 0, uptime: 0 },
+    cfg.stats || {}
+  );
+
+  function start() {
+    const paint = d => nums.forEach(el => run(el, Number(d[el.dataset.key]) || 0));
+    if (!cfg.statsEndpoint) return paint(fallback);
+    fetch(cfg.statsEndpoint)
+      .then(r => (r.ok ? r.json() : Promise.reject()))
+      .then(d => paint(Object.assign({}, fallback, d)))
+      .catch(() => paint(fallback));
+  }
+
+  new IntersectionObserver((entries, obs) => {
+    if (entries[0].isIntersecting) { obs.disconnect(); start(); }
+  }, { threshold: 0.3 }).observe(wrap);
+})();
+
 
     /* ── Command filter + search ────────────────────── */
     const list = $('#cmdList');
