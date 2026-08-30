@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Royal Bot — Moderation, Tickets, Giveaways &amp; More for Discord</title>
+    <meta name="description"
+        content="Royal Bot is an all-in-one Discord bot with moderation, ticketing, giveaways, leveling, invite tracking and logging — self-hosted on private hardware.">
+    <meta property="og:title" content="Royal Bot for Discord">
+    <meta property="og:description"
+        content="Moderation, tickets, giveaways, leveling and more. Self-hosted, private, fast.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#07070c">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
+</head>
+
+<body>
+
+    <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+
+    <header class="nav" id="nav">
+        <div class="wrap nav__inner">
+            <a class="brand" href="index.html">
+                <span class="brand__mark">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M3 8l4.5 3.5L12 5l4.5 6.5L21 8l-1.8 10.2a1 1 0 0 1-1 .8H5.8a1 1 0 0 1-1-.8L3 8z"
+                            stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+                    </svg>
+                </span>
+                <span class="brand__name" data-brand>Royal Bot</span>
+            </a>
+
+            <nav class="nav__links" id="navLinks">
+                <a href="#features">Features</a>
+                <a href="#showcase">Showcase</a>
+                <a href="#commands">Commands</a>
+                <a href="#security">Security</a>
+                <a href="#faq">FAQ</a>
+                <a class="nav__mobileCta btn btn--primary" data-invite href="#">Add to Discord</a>
+            </nav>
+
+            <div class="nav__actions">
+                <a class="btn btn--ghost hide-sm" data-support href="#">Support</a>
+                <a class="btn btn--primary" data-invite href="#">
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="btn__ic">
+                        <path
+                            d="M19.6 5.1A17 17 0 0 0 15.4 4l-.2.4c1.4.3 2.6.8 3.7 1.5a13.7 13.7 0 0 0-9.8 0c1.1-.7 2.3-1.2 3.7-1.5L12.6 4a17 17 0 0 0-4.2 1.1C5.7 9 5 12.8 5.3 16.5a17 17 0 0 0 5.2 2.6l.6-1a11 11 0 0 1-1.7-.8l.4-.3a12.2 12.2 0 0 0 10.4 0l.4.3c-.5.3-1.1.6-1.7.8l.6 1a17 17 0 0 0 5.2-2.6c.4-4.3-.7-8.1-2.9-11.4h-2.2ZM9.7 14.3c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.9.9 1.8 2c0 1.1-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.9.9 1.8 2c0 1.1-.8 2-1.8 2Z" />
+                    </svg>
+                    Add to Discord
+                </a>
+                <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ── HERO ───────────────────────────────────────────── -->
+        <section class="hero">
+            <div class="wrap hero__grid">
+                <div class="hero__copy">
+                    <a class="pill" data-support href="#">
+                        <span class="pill__dot"></span> v2.0 is live — dashboard, tickets &amp; more
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </a>
+
+                    <h1 class="hero__title">
+                        One bot to run<br>
+                        <span class="grad">the whole kingdom.</span>
+                    </h1>
+
+                    <p class="hero__sub">
+                        Moderation, ticketing, giveaways, leveling, invite tracking and audit logging —
+                        in a single fast bot, running on hardware we own. No shared cloud database,
+                        no data resold, no surprises.
+                    </p>
+
+                    <div class="hero__cta">
+                        <a class="btn btn--primary btn--lg" data-invite href="#">Add to Discord — it's free</a>
+                        <a class="btn btn--glass btn--lg" href="#features">Explore features</a>
+                    </div>
+
+                    <ul class="hero__stats" id="stats">
+                        <li><strong data-count="0" data-key="servers">0</strong><span>Servers</span></li>
+                        <li><strong data-count="0" data-key="users">0</strong><span>Users served</span></li>
+                        <li><strong data-count="0" data-key="commands">0</strong><span>Commands</span></li>
+                        <li><strong data-count="0" data-key="uptime" data-suffix="%">0</strong><span>Uptime</span></li>
+                    </ul>
+                </div>
+
+                <!-- Discord embed mock -->
+                <div class="hero__art" data-reveal>
+                    <div class="mock glow">
+                        <div class="mock__bar"><i></i><i></i><i></i><span>#staff-commands</span></div>
+                        <div class="mock__body">
+                            <div class="msg">
+                                <div class="msg__av">R</div>
+                                <div>
+                                    <div class="msg__head"><b data-brand>Royal Bot</b><span
+                                            class="tag">APP</span><time>Today at 21:04</time></div>
+                                    <div class="embed">
+                                        <div class="embed__title">🛡️ Moderation — Case #482</div>
+                                        <div class="embed__rows">
+                                            <div><span>User</span><b>@troublemaker</b></div>
+                                            <div><span>Action</span><b>Timeout · 24h</b></div>
+                                            <div><span>Moderator</span><b>@you</b></div>
+                                            <div><span>Reason</span><b>Raid attempt</b></div>
+                                        </div>
+                                        <div class="embed__foot">Logged to #mod-logs · synced to dashboard</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="msg">
+                                <div class="msg__av alt">R</div>
+                                <div>
+                                    <div class="msg__head"><b data-brand>Royal Bot</b><span
+                                            class="tag">APP</span><time>Today at 21:06</time></div>
+                                    <div class="embed embed--gold">
+                                        <div class="embed__title">🎉 Giveaway ended</div>
+                                        <div class="embed__rows">
+                                            <div><span>Prize</span><b>Nitro (1 month)</b></div>
+                                            <div><span>Entries</span><b>1,204</b></div>
+                                        </div>
+                                        <div class="embed__foot">Winner rolled fairly · re-roll available for 24h</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="marquee" aria-hidden="true">
+                <div class="marquee__track">
+                    <span>Auto-moderation</span><span>Ticket panels</span><span>XP &amp; levels</span><span>Invite
+                        tracking</span>
+                    <span>Giveaways</span><span>Reaction roles</span><span>Audit logs</span><span>Reminders</span>
+                    <span>Voice XP</span><span>Warn decay</span><span>Server stats</span><span>Owner dashboard</span>
+                    <span>Auto-moderation</span><span>Ticket panels</span><span>XP &amp; levels</span><span>Invite
+                        tracking</span>
+                    <span>Giveaways</span><span>Reaction roles</span><span>Audit logs</span><span>Reminders</span>
+                    <span>Voice XP</span><span>Warn decay</span><span>Server stats</span><span>Owner dashboard</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── FEATURES ───────────────────────────────────────── -->
+        <section class="sec" id="features">
+            <div class="wrap">
+                <div class="sec__head" data-reveal>
+                    <span class="eyebrow">Features</span>
+                    <h2>Everything your server needs,<br>nothing it doesn't.</h2>
+                    <p>Each module is independent — enable what you want, disable the rest from the dashboard.</p>
+                </div>
+
+                <div class="grid grid--3 spot">
+                    <article class="card" data-reveal>
+                        <div class="card__ic"><svg viewBox="0 0 24 24" fill="none">
+                                <path d="M12 3l7 3v6c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9V6l7-3z" stroke="currentColor"
+                                    stroke-width="1.6" stroke-linejoin="round" />
+                                <path d="M9.2 12.2l1.9 1.9 3.7-3.9" stroke="currentColor" stroke-width="1.6"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg></div>
+                        <h3>Moderation &amp; Automod</h3>
+                        <p>Warn, mute, kick, ban and timeout with full case history. Anti-spam, anti-invite, link
+                            filters and raid protection that reacts in milliseconds.</p>
+                    </article>
+
+                    <article class="card" data-reveal>
+                        <div class="card__ic"><svg viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1.2a2.2 2.2 0 0 0 0 5.6V16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1.2a2.2 2.2 0 0 0 0-5.6V8z"
+                                    stroke="currentColor" stroke-width="1.6" />
+                                <path d="M13 6v12" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2 2.5" />
+                            </svg></div>
+                        <h3>Ticket System</h3>
+                        <p>Button-driven panels, category routing, staff claiming, transcripts on close and an
+                            inactivity worker that tidies up abandoned tickets automatically.</p>
+                    </article>
+
+                    <article class="card" data-reveal>
+                        <div class="card__ic"><svg viewBox="0 0 24 24" fill="none">
+                                <path d="M4 11h16v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8z" stroke="currentColor"
+                                    stroke-width="1.6" />
+                                <path d="M3 7.5h18V11H3V7.5z" stroke="currentColor" stroke-width="1.6" />
+                                <path d="M12 7.5V20" stroke="currentColor" stroke-width="1.6" />
+                                <path d="M12 7.5S10.6 4 8.8 4a2 2 0 1 0 0 3.5H12zm0 0S13.4 4 15.2 4a2 2 0 1 1 0 3.5H12z"
+                                    stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+                            </svg></div>
+                        <h3>Giveaways</h3>
+                        <p>Timed drops with role requirements, bonus entries, fair rolling and 24-hour re-rolls.
+                            Survives restarts — everything is persisted, not held in memory.</p>
+                    </article>
+
+                    <article class="card" data-reveal>
+                        <div class="card__ic"><svg viewBox="0 0 24 24" fill="none">
+                                <path d="M4 19V9m5 10V5m5 14v-7m5 7V8" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linecap="round" />
+                            </svg></div>
+                        <h3>Leveling &amp; Voice XP</h3>
+                        <p>Text and voice XP with per-role multipliers, custom rank cards, level-up rewards and
+                            leaderboards that don't hammer your database.</p>
+                    </article>
+
+                    <article class="card" data-reveal>
+                        <div class="card__ic"><svg viewBox="0 0 24 24" fill="none">
+                                <circle cx="9" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6" />
+                                <path d="M3.5 19a5.5 5.5 0 0 1 11 0" stroke="currentColor" stroke-width="1.6"
+                                    stroke-linecap="round" />
+                                <path d="M17.5 8.5v5M15 11h5" stroke="currentColor" stroke-width="1.6"
+                                    stroke-linecap="round" />
+                            </svg></div>
+                        <h3>Invite Tracking</h3>
+                        <p>Know exactly who invited whom, with fake/left detection, per-inviter leaderboards and
+                            automatic rewards when someone hits a milestone.</p>
+                    </article>
+
+                    <article class="card" data-reveal>
+                        <div class="card__ic"><svg viewBox="0 0 24 24" fill="none">
+                                <rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor"
+                                    stroke-width="1.6" />
+                                <path d="M8 9h8M8 12.5h8M8 16h5" stroke="currentColor" stroke-width="1.6"
+                                    stroke-linecap="round" />
+                            </svg></div>
+                        <h3>Audit Logging</h3>
+                        <p>Message edits and deletions, role and channel changes, joins, leaves, nickname updates —
+                            routed to whichever channels you choose.</p>
+                    </article>
+
+                    <article class="card" data-reveal>
+                        <div class="card__ic"><svg viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="8.2" stroke="currentColor" stroke-width="1.6" />
+                                <path d="M12 7.5V12l3 1.8" stroke="currentColor" stroke-width="1.6"
+                                    stroke-linecap="round" />
+                            </svg></div>
+                        <h3>Reminders &amp; Schedules</h3>
+                        <p>Personal and server-wide reminders, recurring announcements and scheduled embeds — all queued
+                            persistently so nothing is lost on deploy.</p>
+                    </article>
+
+                    <article class="card" data-reveal>
+                        <div class="card__ic"><svg viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.7l5.9-.8L12 3.5z"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                            </svg></div>
+                        <h3>Reaction &amp; Auto Roles</h3>
+                        <p>Button, dropdown and reaction role menus with exclusive groups, plus auto-roles on join and
+                            rules-screening support.</p>
+                    </article>
+
+                    <article class="card" data-reveal>
+                        <div class="card__ic"><svg viewBox="0 0 24 24" fill="none">
+                                <rect x="3" y="4.5" width="18" height="13" rx="2" stroke="currentColor"
+                                    stroke-width="1.6" />
+                                <path d="M8 21h8M12 17.5V21" stroke="currentColor" stroke-width="1.6"
+                                    stroke-linecap="round" />
+                                <path d="M6.5 13l2.5-3 2.3 2.4L14 8.5l3.5 4.5" stroke="currentColor" stroke-width="1.6"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg></div>
+                        <h3>Owner Dashboard</h3>
+                        <p>A private web control panel for live metrics, log streaming, presence control, broadcasts and
+                            per-command toggles — bound to localhost, not the internet.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── SHOWCASE (bento) ───────────────────────────────── -->
+        <section class="sec sec--tint" id="showcase">
+            <div class="wrap">
+                <div class="sec__head" data-reveal>
+                    <span class="eyebrow">Showcase</span>
+                    <h2>Built for real servers,<br>not screenshots.</h2>
+                    <p>Every module is battle-tested under load, with caching, connection pooling and graceful restarts.
+                    </p>
+                </div>
+
+                <div class="bento">
+                    <div class="bento__cell bento__cell--wide card" data-reveal>
+                        <div class="bento__copy">
+                            <h3>Live control panel</h3>
+                            <p>Watch ping, memory, CPU and guild count in real time. Stream logs, flip maintenance mode,
+                                push a broadcast, or disable a misbehaving command without ever SSH-ing in.</p>
+                        </div>
+                        <div class="panelMock">
+                            <div class="panelMock__row">
+                                <div class="stat"><span>Ping</span><b>42<i>ms</i></b>
+                                    <div class="spark"><svg viewBox="0 0 100 30" preserveAspectRatio="none">
+                                            <polyline points="0,22 14,18 28,20 42,10 56,14 70,7 84,12 100,6" />
+                                        </svg></div>
+                                </div>
+                                <div class="stat"><span>Memory</span><b>318<i>MB</i></b>
+                                    <div class="spark"><svg viewBox="0 0 100 30" preserveAspectRatio="none">
+                                            <polyline points="0,16 14,19 28,13 42,17 56,11 70,15 84,9 100,12" />
+                                        </svg></div>
+                                </div>
+                                <div class="stat"><span>Guilds</span><b>1,204</b>
+                                    <div class="spark"><svg viewBox="0 0 100 30" preserveAspectRatio="none">
+                                            <polyline points="0,26 14,24 28,21 42,19 56,15 70,13 84,8 100,5" />
+                                        </svg></div>
+                                </div>
+                            </div>
+                            <div class="logMock">
+                                <p><i class="ok"></i>[Redis] Connected to cluster state store.</p>
+                                <p><i class="ok"></i>[Database] MongoDB connected (poolSize: 25).</p>
+                                <p><i class="ok"></i>Bot connected as Royal ✿ Bot#9865</p>
+                                <p><i class="warn"></i>[Presence] rotation refreshed — 4 entries</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bento__cell card" data-reveal>
+                        <h3>Fully slash-native</h3>
+                        <p>Autocomplete, subcommands, modals, buttons and select menus. No prefix clutter, no permission
+                            guesswork.</p>
+                        <div class="chips"><span>/ban</span><span>/ticket setup</span><span>/giveaway
+                                start</span><span>/rank</span><span>/invites</span></div>
+                    </div>
+
+                    <div class="bento__cell card" data-reveal>
+                        <h3>Per-server config</h3>
+                        <p>Every guild gets its own settings document. Change a prefix, a log channel or an XP rate
+                            without touching anyone else's setup.</p>
+                        <div class="chips"><span>Log channels</span><span>XP rates</span><span>Automod
+                                rules</span><span>Locale</span></div>
+                    </div>
+
+                    <div class="bento__cell bento__cell--wide card" data-reveal>
+                        <div class="bento__copy">
+                            <h3>Graceful by design</h3>
+                            <p>Deploys drain in-flight interactions, close the gateway, flush Mongo and quit Redis
+                                cleanly. Your members see a bot that simply never seems to go down.</p>
+                        </div>
+                        <div class="ticks">
+                            <span>Persistent job queues</span><span>Automatic reconnects</span><span>Interaction
+                                deferral</span><span>Zero-loss restarts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── COMMANDS ───────────────────────────────────────── -->
+        <section class="sec" id="commands">
+            <div class="wrap">
+                <div class="sec__head" data-reveal>
+                    <span class="eyebrow">Commands</span>
+                    <h2>A quick taste of the toolkit.</h2>
+                    <p>Over 140 commands across every module. Here are the ones people reach for daily.</p>
+                </div>
+
+                <div class="cmd__bar" data-reveal>
+                    <div class="cmd__filters" id="cmdFilters">
+                        <button class="chip is-active" data-cat="all">All</button>
+                        <button class="chip" data-cat="mod">Moderation</button>
+                        <button class="chip" data-cat="ticket">Tickets</button>
+                        <button class="chip" data-cat="fun">Giveaways</button>
+                        <button class="chip" data-cat="level">Leveling</button>
+                        <button class="chip" data-cat="util">Utility</button>
+                    </div>
+                    <label class="cmd__search">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.7" />
+                            <path d="M16 16l4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                        </svg>
+                        <input type="search" id="cmdSearch" placeholder="Search commands…" aria-label="Search commands">
+                    </label>
+                </div>
+
+                <div class="cmd__list" id="cmdList" data-reveal>
+                    <div class="cmd" data-cat="mod"><code>/ban</code>
+                        <p>Ban a member with an optional reason, duration and message purge.</p>
+                    </div>
+                    <div class="cmd" data-cat="mod"><code>/timeout</code>
+                        <p>Temporarily mute a member; auto-logged as a numbered case.</p>
+                    </div>
+                    <div class="cmd" data-cat="mod"><code>/warn</code>
+                        <p>Issue a warning that decays automatically after your set period.</p>
+                    </div>
+                    <div class="cmd" data-cat="mod"><code>/case</code>
+                        <p>Look up, edit or delete any moderation case by its ID.</p>
+                    </div>
+                    <div class="cmd" data-cat="mod"><code>/purge</code>
+                        <p>Bulk-delete messages with filters for user, bots, links or attachments.</p>
+                    </div>
+                    <div class="cmd" data-cat="ticket"><code>/ticket setup</code>
+                        <p>Build a ticket panel with categories, staff roles and a welcome embed.</p>
+                    </div>
+                    <div class="cmd" data-cat="ticket"><code>/ticket close</code>
+                        <p>Close the current ticket and save a full HTML transcript.</p>
+                    </div>
+                    <div class="cmd" data-cat="ticket"><code>/ticket add</code>
+                        <p>Pull another member or role into an open ticket.</p>
+                    </div>
+                    <div class="cmd" data-cat="fun"><code>/giveaway start</code>
+                        <p>Launch a giveaway with duration, winner count and role requirements.</p>
+                    </div>
+                    <div class="cmd" data-cat="fun"><code>/giveaway reroll</code>
+                        <p>Roll a fresh winner within 24 hours of a giveaway ending.</p>
+                    </div>
+                    <div class="cmd" data-cat="level"><code>/rank</code>
+                        <p>Show your level card with XP progress, rank and voice time.</p>
+                    </div>
+                    <div class="cmd" data-cat="level"><code>/leaderboard</code>
+                        <p>Paginated server leaderboard for text XP, voice XP or invites.</p>
+                    </div>
+                    <div class="cmd" data-cat="level"><code>/level-rewards</code>
+                        <p>Map roles to levels and grant them automatically on level-up.</p>
+                    </div>
+                    <div class="cmd" data-cat="util"><code>/invites</code>
+                        <p>See who invited a member, plus joins, leaves and fake counts.</p>
+                    </div>
+                    <div class="cmd" data-cat="util"><code>/remind</code>
+                        <p>Set a personal or channel reminder in natural language.</p>
+                    </div>
+                    <div class="cmd" data-cat="util"><code>/embed</code>
+                        <p>Compose a rich embed through a modal, then post or schedule it.</p>
+                    </div>
+                    <div class="cmd" data-cat="util"><code>/serverinfo</code>
+                        <p>Server overview: members, boosts, channels, roles and creation date.</p>
+                    </div>
+                    <div class="cmd" data-cat="util"><code>/config</code>
+                        <p>Open the per-guild settings menu for every enabled module.</p>
+                    </div>
+                </div>
+                <p class="cmd__empty" id="cmdEmpty" hidden>No commands match that search.</p>
+            </div>
+        </section>
+
+        <!-- ── SECURITY ───────────────────────────────────────── -->
+        <section class="sec sec--tint" id="security">
+            <div class="wrap">
+                <div class="sec__head" data-reveal>
+                    <span class="eyebrow">Data &amp; Security</span>
+                    <h2>Your data lives on our metal —<br>not in someone else's cloud.</h2>
+                    <p><span data-brand>Royal Bot</span> runs on a private, self-managed server. The database is never
+                        exposed to the public internet and is never shared with a third-party provider.</p>
+                </div>
+
+                <div class="grid grid--3 spot">
+                    <article class="card card--sec" data-reveal>
+                        <div class="card__ic"><svg viewBox="0 0 24 24" fill="none">
+                                <rect x="4" y="10" width="16" height="10" rx="2" stroke="currentColor"
+                                    stroke-width="1.6" />
+                                <path d="M8 10V7.5a4 4 0 0 1 8 0V10" stroke="currentColor" stroke-width="1.6" />
+                                <circle cx="12" cy="15" r="1.4" fill="currentColor" />
+                            </svg></div>
+                        <h3>Self-hosted database</h3>
+                        <p>MongoDB runs locally on a dedicated machine we control, bound to <code>127.0.0.1</code>.
+                            There is no publicly routable database port — remote access is impossible without an SSH
+                            session on the host.</p>
+                    </article>
+
+                    <article class="card card--sec" data-reveal>
+                        <div class="card__ic"><svg viewBox="0 0 24 24" fill="none">
+                                <path d="M12 3.2l7 2.8v5.5c0 4.2-2.9 7.6-7 9.3-4.1-1.7-7-5.1-7-9.3V6l7-2.8z"
+                                    stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+                            </svg></div>
+                        <h3>Locked-down host</h3>
+                        <p>Key-only SSH with password login disabled, a default-deny firewall, fail2ban, unattended
+                            security updates, and authentication enforced on the database with least-privilege
+                            application users.</p>
+                    </article>
+
+                    <article class="card card--sec" data-reveal>
+                        <div class="card__ic"><svg viewBox="0 0 24 24" fill="none">
+                                <path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z" stroke="currentColor"
+                                    stroke-width="1.6" />
+                                <path d="M4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7" stroke="currentColor"
+                                    stroke-width="1.6" />
+                                <path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" stroke="currentColor" stroke-width="1.6" />
+                            </svg></div>
+                        <h3>Encrypted backups</h3>
+                        <p>Snapshots are encrypted before they leave the machine and stored on offline media. Backups
+                            are restore-tested and rotated; expired copies are destroyed, not archived indefinitely.</p>
+                    </article>
+
+                    <article class="card card--sec" data-reveal>
+                        <div class="card__ic"><svg viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12h14M12 5v14" stroke="currentColor" stroke-width="1.7"
+                                    stroke-linecap="round" />
+                                <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6" />
+                            </svg></div>
+                        <h3>Minimal collection</h3>
+                        <p>We store IDs and settings, not conversations. Message content is only retained where a
+                            feature you enabled requires it — like a ticket transcript or a deletion log — and it
+                            expires on a schedule.</p>
+                    </article>
+
+                    <article class="card card--sec" data-reveal>
+                        <div class="card__ic"><svg viewBox="0 0 24 24" fill="none">
+                                <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linecap="round" />
+                            </svg></div>
+                        <h3>No selling, no ads</h3>
+                        <p>Your data is never sold, rented, or handed to advertisers or analytics brokers. There are no
+                            third-party trackers embedded in the bot or in this website.</p>
+                    </article>
+
+                    <article class="card card--sec" data-reveal>
+                        <div class="card__ic"><svg viewBox="0 0 24 24" fill="none">
+                                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg></div>
+                        <h3>Deletion on request</h3>
+                        <p>Remove the bot and your guild's data is purged on our retention schedule. Want it gone
+                            sooner? Ask in the support server and we'll wipe it, usually within 72 hours.</p>
+                    </article>
+                </div>
+
+                <div class="noteBar" data-reveal>
+                    <p>Read the full details in our <a href="privacy.html">Privacy Policy</a> and <a
+                            href="terms.html">Terms of Service</a>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── FAQ ────────────────────────────────────────────── -->
+        <section class="sec" id="faq">
+            <div class="wrap wrap--narrow">
+                <div class="sec__head" data-reveal>
+                    <span class="eyebrow">FAQ</span>
+                    <h2>Questions, answered.</h2>
+                </div>
+
+                <div class="faq" id="faqList">
+                    <details data-reveal>
+                        <summary>Is Royal Bot free?<i></i></summary>
+                        <p>Yes. Every feature listed on this page is free to use. If optional premium perks are ever
+                            introduced, existing functionality stays available at no cost.</p>
+                    </details>
+                    <details data-reveal>
+                        <summary>Why does it ask for so many permissions?<i></i></summary>
+                        <p>The invite link requests the permissions needed for every module. You can uncheck anything
+                            you don't want during the invite flow, or restrict the bot's role afterwards — features you
+                            disable simply won't run.</p>
+                    </details>
+                    <details data-reveal>
+                        <summary>Does the bot read my messages?<i></i></summary>
+                        <p>It processes messages in real time to run automod and logging, but it doesn't store them
+                            unless a feature you turned on needs it — for example a ticket transcript or a
+                            message-delete log. Nothing is used for training or profiling.</p>
+                    </details>
+                    <details data-reveal>
+                        <summary>Where is the data physically stored?<i></i></summary>
+                        <p>On a private server we administer directly, with the database listening only on the loopback
+                            interface. It is not on a shared cloud database service, and no third party has query
+                            access.</p>
+                    </details>
+                    <details data-reveal>
+                        <summary>How do I get my data deleted?<i></i></summary>
+                        <p>Kick the bot and the associated guild data is purged on our retention schedule. For an
+                            immediate wipe, open a ticket in the support server from an account with Manage Server, or
+                            email us.</p>
+                    </details>
+                    <details data-reveal>
+                        <summary>Can I self-host it?<i></i></summary>
+                        <p>Check the repository for the current licence and setup notes. If the source isn't public, the
+                            support server is the place to ask.</p>
+                    </details>
+                    <details data-reveal>
+                        <summary>What happens during an outage?<i></i></summary>
+                        <p>Jobs like giveaways and reminders are persisted in the database, so scheduled work resumes as
+                            soon as the process is back. Status updates get posted in the support server.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── CTA ────────────────────────────────────────────── -->
+        <section class="cta">
+            <div class="wrap">
+                <div class="cta__box" data-reveal>
+                    <h2>Ready to crown your server?</h2>
+                    <p>Set-up takes under a minute. Invite the bot, run <code>/config</code>, and you're live.</p>
+                    <div class="cta__row">
+                        <a class="btn btn--primary btn--lg" data-invite href="#">Add to Discord</a>
+                        <button class="btn btn--glass btn--lg" id="copyInvite">Copy invite link</button>
+                    </div>
+                    <small>Free forever · No credit card · Remove it any time</small>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="foot">
+        <div class="wrap foot__grid">
+            <div>
+                <a class="brand" href="index.html">
+                    <span class="brand__mark"><svg viewBox="0 0 24 24" fill="none">
+                            <path d="M3 8l4.5 3.5L12 5l4.5 6.5L21 8l-1.8 10.2a1 1 0 0 1-1 .8H5.8a1 1 0 0 1-1-.8L3 8z"
+                                stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+                        </svg></span>
+                    <span class="brand__name" data-brand>Royal Bot</span>
+                </a>
+                <p class="foot__tag">Moderation, tickets, giveaways and more — running on hardware we own.</p>
+            </div>
+            <div>
+                <h4>Product</h4><a href="#features">Features</a><a href="#commands">Commands</a><a
+                    href="#security">Security</a><a href="#faq">FAQ</a>
+            </div>
+            <div>
+                <h4>Legal</h4><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a>
+            </div>
+            <div>
+                <h4>Community</h4><a data-support href="#">Support server</a><a data-github href="#">GitHub</a><a
+                    data-mail href="#">Email us</a>
+            </div>
+        </div>
+        <div class="wrap foot__bar">
+            <span>© <span id="year">2026</span> <span data-brand>Royal Bot</span>. Not affiliated with or endorsed by
+                Discord Inc.</span>
+            <a data-invite href="#">Add to Discord →</a>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

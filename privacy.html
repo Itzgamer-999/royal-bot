@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Privacy Policy — Royal Bot</title>
+    <meta name="description" content="What Royal Bot stores, why, and how the self-hosted database is secured.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
+</head>
+
+<body>
+    <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+
+    <header class="nav" id="nav">
+        <div class="wrap nav__inner">
+            <a class="brand" href="index.html">
+                <span class="brand__mark"><svg viewBox="0 0 24 24" fill="none">
+                        <path d="M3 8l4.5 3.5L12 5l4.5 6.5L21 8l-1.8 10.2a1 1 0 0 1-1 .8H5.8a1 1 0 0 1-1-.8L3 8z"
+                            stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+                    </svg></span>
+                <span class="brand__name" data-brand>Royal Bot</span>
+            </a>
+            <nav class="nav__links" id="navLinks">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#security">Security</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a class="nav__mobileCta btn btn--primary" data-invite href="#">Add to Discord</a>
+            </nav>
+            <div class="nav__actions">
+                <a class="btn btn--ghost hide-sm" data-support href="#">Support</a>
+                <a class="btn btn--primary" data-invite href="#">Add to Discord</a>
+                <button class="burger" id="burger" aria-label="Menu"
+                    aria-expanded="false"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <section class="legalHero">
+        <div class="wrap">
+            <span class="eyebrow">Legal</span>
+            <h1>Privacy Policy</h1>
+            <p>What <span data-brand>Royal Bot</span> stores, why it stores it, and how the self-hosted database is
+                protected.</p>
+            <span class="updated">Last updated: <span data-updated>30 August 2026</span></span>
+        </div>
+    </section>
+
+    <div class="wrap legal">
+        <aside class="toc">
+            <b>On this page</b>
+            <a href="#summary">Summary</a>
+            <a href="#controller">1. Who we are</a>
+            <a href="#collect">2. What we collect</a>
+            <a href="#nocollect">3. What we don't collect</a>
+            <a href="#why">4. Why we collect it</a>
+            <a href="#hosting">5. Where data is stored</a>
+            <a href="#security">6. How it's secured</a>
+            <a href="#sharing">7. Sharing</a>
+            <a href="#retention">8. Retention</a>
+            <a href="#rights">9. Your rights</a>
+            <a href="#deletion">10. Deleting your data</a>
+            <a href="#children">11. Children</a>
+            <a href="#website">12. This website</a>
+            <a href="#breach">13. Breach notification</a>
+            <a href="#changes">14. Changes</a>
+            <a href="#contact">15. Contact</a>
+        </aside>
+
+        <article class="doc">
+            <div class="callout">
+                <p><strong>The short version:</strong> we store Discord IDs and the settings you configure, on a private
+                    server we own and administer ourselves. The database is not exposed to the internet, not hosted with
+                    a third-party cloud database provider, and never sold or shared with advertisers. Message content is
+                    only kept where a feature you enabled requires it, and it expires.</p>
+            </div>
+
+            <h2 id="summary">Summary table</h2>
+            <ul>
+                <li><strong>Controller:</strong> <span data-entity>the operator</span> of <span data-brand>Royal
+                        Bot</span>.</li>
+                <li><strong>Storage:</strong> self-hosted MongoDB on a private server, bound to the loopback interface.
+                </li>
+                <li><strong>Third-party processors:</strong> none for the database. Discord itself is unavoidably
+                    involved as the platform.</li>
+                <li><strong>Selling data:</strong> never.</li>
+                <li><strong>Deletion:</strong> automatic on removal, or on request.</li>
+            </ul>
+
+            <h2 id="controller">1. Who we are</h2>
+            <p>This policy applies to <span data-brand>Royal Bot</span>, a Discord application operated by <span
+                    data-entity>the operator</span>. For the purposes of data-protection law, we act as the data
+                controller for the information described below. You can reach us at <a data-mail href="#"><span
+                        data-email>support@example.com</span></a>.</p>
+
+            <h2 id="collect">2. What we collect</h2>
+            <p>We collect the minimum needed for the features you enable.</p>
+
+            <h3>Always stored</h3>
+            <ul>
+                <li><strong>Discord identifiers:</strong> guild IDs, channel IDs, role IDs, user IDs and message IDs.
+                    These are numeric references, not personal profiles.</li>
+                <li><strong>Server configuration:</strong> prefixes, enabled modules, log channel choices, automod
+                    rules, XP rates, ticket categories and similar settings you set yourself.</li>
+            </ul>
+
+            <h3>Stored only if the relevant feature is enabled</h3>
+            <ul>
+                <li><strong>Moderation records:</strong> case type, target user ID, moderator ID, reason text you type,
+                    timestamp and duration.</li>
+                <li><strong>Ticket transcripts:</strong> the messages sent inside a ticket channel, saved when the
+                    ticket is closed so staff can review it.</li>
+                <li><strong>Audit and message logs:</strong> where you enable message-delete or message-edit logging,
+                    the content of the affected message is processed and posted to your chosen log channel; a
+                    short-lived copy may be cached to make that possible.</li>
+                <li><strong>Leveling data:</strong> XP totals, level, last-message timestamp and accumulated voice
+                    minutes.</li>
+                <li><strong>Invite tracking:</strong> invite codes, inviter user IDs, join and leave counts.</li>
+                <li><strong>Giveaways and reminders:</strong> entrant user IDs, prize text, reminder text and scheduled
+                    times.</li>
+            </ul>
+
+            <h3>Operational data</h3>
+            <ul>
+                <li><strong>Diagnostic logs:</strong> command names, error stack traces, latency and timestamps, used to
+                    fix bugs. These are rotated and deleted regularly.</li>
+            </ul>
+
+            <h2 id="nocollect">3. What we never collect</h2>
+            <ul>
+                <li>Your Discord password, email address, phone number, or payment details.</li>
+                <li>Your Discord authentication token.</li>
+                <li>Direct messages between users, or messages in servers where the Bot is not present.</li>
+                <li>Message content stored "just in case" — if a feature doesn't need it, it isn't kept.</li>
+                <li>Biometric data, precise location data, or any special-category personal data.</li>
+                <li>Anything used to train machine-learning models. Your data is never used for that.</li>
+            </ul>
+
+            <h2 id="why">4. Why we collect it (and our legal basis)</h2>
+            <p>We process this data to provide the features you asked for, to keep the Service secure and abuse-free,
+                and to diagnose faults. Where the UK/EU GDPR applies, our legal bases are <strong>performance of a
+                    contract</strong> (delivering the functionality you invited the Bot to provide) and
+                <strong>legitimate interests</strong> (keeping the Service running, secure and free from abuse). Where
+                consent is the appropriate basis, you give it by enabling the optional feature in question.</p>
+
+            <h2 id="hosting">5. Where your data is stored</h2>
+            <p>This is the part most bots gloss over, so here is the detail.</p>
+            <ul>
+                <li>The database is <strong>MongoDB running locally on a private server that we own and administer
+                        directly</strong>. It is not a shared cloud database service, and no managed-database vendor
+                    holds a copy or has query access.</li>
+                <li>The database process listens on <code>127.0.0.1</code> only. There is <strong>no publicly routable
+                        database port</strong>, so it cannot be reached from the internet at all — not with a password,
+                    not with a leaked connection string.</li>
+                <li>The bot process and the database sit on the same machine and communicate over the loopback
+                    interface, so query traffic never crosses a public network.</li>
+                <li>The administrative dashboard is likewise bound to localhost and reached through an authenticated SSH
+                    tunnel or a TLS-terminated reverse proxy. It is not open to the public web.</li>
+                <li>Server logs and backups stay on infrastructure under our control.</li>
+            </ul>
+
+            <h2 id="security">6. How it's secured</h2>
+            <ul>
+                <li><strong>Host hardening:</strong> SSH key authentication only with password login and root login
+                    disabled, a default-deny firewall exposing only the ports we actually need, fail2ban on repeated
+                    failures, and automatic security updates.</li>
+                <li><strong>Database authentication:</strong> authorisation is enforced, and the application connects
+                    with a least-privilege user scoped to its own database rather than an administrative account.</li>
+                <li><strong>Secrets management:</strong> tokens and connection strings live in environment variables
+                    with restrictive file permissions, never in the source tree or a public repository, and are rotated
+                    if exposure is suspected.</li>
+                <li><strong>Encryption in transit:</strong> all traffic to Discord uses TLS. Dashboard access is over
+                    TLS or an encrypted SSH tunnel.</li>
+                <li><strong>Encryption at rest:</strong> the storage volume is encrypted, and backups are encrypted
+                    before they leave the machine.</li>
+                <li><strong>Backups:</strong> taken on a regular schedule, stored on controlled media, rotated, and
+                    restore-tested. Expired backups are destroyed rather than kept indefinitely.</li>
+                <li><strong>Access control:</strong> only the bot owner holds shell access. There is no shared login and
+                    no third-party contractor access.</li>
+                <li><strong>Monitoring:</strong> process, resource and error monitoring with alerting so anomalies are
+                    noticed quickly.</li>
+            </ul>
+            <div class="callout callout--warn">
+                <p>No system is perfectly secure. We apply the measures above in good faith and keep the amount of data
+                    we hold small precisely so that the impact of any incident stays small — but we cannot guarantee
+                    absolute security, and you should not send genuinely sensitive personal information through Discord.
+                </p>
+            </div>
+
+            <h2 id="sharing">7. Sharing and disclosure</h2>
+            <p>We do <strong>not</strong> sell, rent, trade or licence your data to anyone. We do not run third-party
+                advertising or analytics inside the Bot.</p>
+            <p>Data may be disclosed only in these narrow cases:</p>
+            <ul>
+                <li><strong>To Discord</strong>, unavoidably, since the Bot operates on their platform — their handling
+                    is governed by their own <a href="https://discord.com/privacy" target="_blank"
+                        rel="noopener">privacy policy</a>.</li>
+                <li><strong>Within your own server</strong>, where the Bot posts to log or ticket channels you
+                    configured. Who can read those channels is controlled by your permissions, not ours.</li>
+                <li><strong>To authorities</strong>, where we are legally compelled, or where disclosure is necessary to
+                    prevent serious harm — such as reports of child sexual abuse material, which we report without
+                    hesitation.</li>
+            </ul>
+
+            <h2 id="retention">8. How long we keep it</h2>
+            <ul>
+                <li><strong>Guild configuration:</strong> kept while the Bot is in your server, then deleted within 30
+                    days of removal.</li>
+                <li><strong>Moderation cases:</strong> retained while the Bot is in the server so history stays useful,
+                    unless you delete a case yourself.</li>
+                <li><strong>Ticket transcripts:</strong> retained per your configured period, defaulting to 90 days.
+                </li>
+                <li><strong>Cached message content for logging:</strong> short-lived, typically minutes to hours, and
+                    never a permanent archive.</li>
+                <li><strong>Diagnostic logs:</strong> rotated and deleted, typically within 14 days.</li>
+                <li><strong>Backups:</strong> rotated on schedule, so deleted records may persist in an encrypted backup
+                    for a short additional window before being overwritten.</li>
+            </ul>
+
+            <h2 id="rights">9. Your rights</h2>
+            <p>Depending on where you live, you may have the right to access the data we hold about you, correct it,
+                delete it, restrict or object to processing, receive a portable copy, and complain to your local
+                data-protection authority. We honour these requests regardless of jurisdiction where we reasonably can.
+            </p>
+            <p>To exercise a right, contact us with your Discord user ID. We may ask you to verify control of that
+                account, and we aim to respond within 30 days.</p>
+
+            <h2 id="deletion">10. Deleting your data</h2>
+            <ul>
+                <li><strong>Server data:</strong> remove the Bot from the server and the associated records are purged
+                    on the retention schedule above. For an immediate wipe, ask us from an account with Manage Server
+                    permission.</li>
+                <li><strong>Personal data:</strong> ask us to erase records tied to your user ID — XP, cases, invites,
+                    reminders and so on. Some moderation records may be retained where a server operator has a
+                    legitimate interest in keeping an accurate enforcement history; we'll tell you if that applies.</li>
+                <li><strong>Turnaround:</strong> usually within 72 hours, and always within 30 days.</li>
+            </ul>
+
+            <h2 id="children">11. Children</h2>
+            <p>The Service is not directed at children under 13, or under the minimum age required by Discord in your
+                country, whichever is higher. We do not knowingly collect data from anyone below that age. If you
+                believe we hold data about a child, contact us and we will delete it promptly.</p>
+
+            <h2 id="website">12. This website</h2>
+            <p>This site is a static page hosted on GitHub Pages. It sets no cookies and runs no advertising or
+                analytics scripts. GitHub may log standard request information such as IP address for security and abuse
+                prevention, as described in the <a
+                    href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement" target="_blank"
+                    rel="noopener">GitHub Privacy Statement</a>. Fonts are loaded from Google Fonts, which receives the
+                request in order to serve the file; self-host the font files if you would rather avoid that.</p>
+
+            <h2 id="breach">13. Breach notification</h2>
+            <p>If a security incident affects your data, we will investigate promptly, take steps to contain it, and
+                notify affected server owners through the support server and, where required, the relevant supervisory
+                authority — normally within 72 hours of becoming aware.</p>
+
+            <h2 id="changes">14. Changes to this policy</h2>
+            <p>We may update this policy as the Bot changes. The "last updated" date will change and material updates
+                will be announced in the support server. Continued use after an update means you accept the revised
+                policy.</p>
+
+            <h2 id="contact">15. Contact</h2>
+            <p>Privacy questions, access requests and deletion requests go to <a data-mail href="#"><span
+                        data-email>support@example.com</span></a> or to the <a data-support href="#">support server</a>.
+            </p>
+
+            <div class="callout callout--warn">
+                <p><strong>Template notice:</strong> this is a general template written to match a self-hosted setup,
+                    not legal advice. Adjust every claim so it describes what you actually do — and if a bullet above
+                    isn't true of your server yet, either implement it or remove the line. Overstating your security
+                    posture is worse than saying nothing.</p>
+            </div>
+        </article>
+    </div>
+
+    <footer class="foot">
+        <div class="wrap foot__bar">
+            <span>© <span id="year">2026</span> <span data-brand>Royal Bot</span>. Not affiliated with or endorsed by
+                Discord Inc.</span>
+            <a href="terms.html">Terms of Service →</a>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
