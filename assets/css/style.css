@@ -227,9 +227,12 @@ body::after {
     background: rgba(255, 255, 255, .05)
 }
 
-.nav__mobileCta {
-    display: none
+.nav__mobileCta { display: none; }
+
+@media (max-width: 900px) {
+  .nav__mobileCta { display: inline-flex; margin-top: 6px; }
 }
+
 
 .nav__actions {
     display: flex;
